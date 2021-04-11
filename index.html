@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calc js</title>
+</head>
+<body>
+    <div class="top">
+        <h2>Calculator</h2>
+        <form action="">
+            <input type="text" id="result" value=" " placeholder="0" readonly>
+        </form>
+    </div>
+    <div class="btn">
+        <span class="showNum" onclick="clr()">C</span>
+        <span class="showNum" onclick="delback()">Cl</span>
+        <span class="showNum" onclick="show('/')">/</span>
+        <span class="showNum" onclick="show('*')">*</span>
+        <span class="showNum" onclick="show('1')">1</span>
+        <span class="showNum" onclick="show('2')">2</span>
+        <span class="showNum" onclick="show('3')">3</span>
+        <span class="showNum" onclick="show('-')">-</span>
+        <span class="showNum" onclick="show('4')">4</span>
+        <span class="showNum" onclick="show('5')">5</span>
+        <span class="showNum" onclick="show('6')">6</span>
+        <span class="showNum" onclick="show('+')">+</span>
+        <span class="showNum" onclick="show('7')">7</span>
+        <span class="showNum" onclick="show('8')">8</span>
+        <span class="showNum" onclick="show('9')">9</span>
+        <span class="showNum" onclick="show('.')">.</span>
+        <span class="showNum" onclick="show('0')">0</span>
+        <span class="showNum" onclick="show('00')">00</span>
+        <span class="equals" onclick="solve()">=</span>
+
+    </div>
+    <script>
+        function show(val){
+            document.getElementById('result').value += val;
+        }
+
+        function solve(){
+            
+            document.getElementById('result').value = eval(document.getElementById('result').value);
+        }
+
+        function clr(){
+            document.getElementById('result').value ='';
+        }
+
+        function delback(){
+            let res = document.getElementById('result').value
+            res = res.substr(0, res.length - 1)
+            document.getElementById('result').value = res
+        }
+
+    </script>
+</body>
+</html>
